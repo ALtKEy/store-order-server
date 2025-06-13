@@ -2,9 +2,11 @@ package com.altkey.code.store.order.boot
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import org.springframework.context.annotation.ComponentScan
 import java.io.File
 
 @SpringBootApplication
+@ComponentScan(basePackages = ["com.altkey.code"])
 class StoreOrderApplication
 
 fun main(args: Array<String>) {
