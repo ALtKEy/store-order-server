@@ -2,11 +2,11 @@ import org.gradle.kotlin.dsl.annotationProcessor
 import org.gradle.kotlin.dsl.implementation
 
 plugins {
-	kotlin("jvm") version "2.1.20"
-	kotlin("plugin.spring") version "2.1.20"
-	id("org.springframework.boot") version "3.4.4"
+	kotlin("jvm") version "2.1.21"
+	kotlin("plugin.spring") version "2.1.21"
+	id("org.springframework.boot") version "3.5.0"
 	id("io.spring.dependency-management") version "1.1.7"
-	kotlin("plugin.jpa") version "2.1.20"
+	kotlin("plugin.jpa") version "2.1.21"
 }
 
 group = "com.altkey.code"
@@ -34,10 +34,10 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 
-	implementation("org.duckdb:duckdb_jdbc:1.2.1")
+	implementation("org.duckdb:duckdb_jdbc:1.3.0")
 	implementation("com.zaxxer:HikariCP:6.3.0")
 
-	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.6")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.8")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
