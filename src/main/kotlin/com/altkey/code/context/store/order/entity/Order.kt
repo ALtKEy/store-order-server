@@ -1,10 +1,7 @@
 package com.altkey.code.context.store.order.entity
 
 import com.altkey.code.context.store.order.enums.OrderStatus
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.Table
+import jakarta.persistence.*
 import java.time.LocalDateTime
 
 /**
@@ -20,6 +17,7 @@ class Order(
      * 고유 ID
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private val id: Long,
 
     /**
