@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource
  * @since 2025-04-28
  */
 @Configuration
-@PropertySource("file:\${module.config}\${module.name}.properties")
-@PropertySource("file:\${module.config}\${module.name}-\${spring.profiles.active}.properties")
+@PropertySource("classpath:\${module.name}.properties")
+@PropertySource("classpath:\${module.name}-\${spring.profiles.active}.properties")
 class StoreOrderPropertiesConfigure {
 }
