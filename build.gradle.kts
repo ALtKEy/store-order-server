@@ -34,7 +34,7 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 
-	implementation("org.duckdb:duckdb_jdbc:1.3.0")
+	implementation("org.duckdb:duckdb_jdbc:1.3.0.0")
 	implementation("com.zaxxer:HikariCP:6.3.0")
 
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.8")
