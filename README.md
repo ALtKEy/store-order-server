@@ -5,7 +5,7 @@
 * WebSocket 사용자/관리자에 주문번호를 갱신
 
 ## 개발환경
-* Java 21, Kotlin 2.1.x, Spring Boot 3.5.x, WebSocket, QueryDSL, JPA, Kotlin JDSL
+* Java 21, Kotlin 2.1.x, Spring Boot 3.5.x, WebSocket, GraphQL, JPA, Kotlin JDSL
 
 ## 설치
 * 지원환경

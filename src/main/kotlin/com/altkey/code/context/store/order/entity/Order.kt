@@ -11,8 +11,7 @@ import java.time.LocalDateTime
  * @since 2025-04-08
  */
 @Entity
-@Table(name = "orders")
-class Order(
+class Order (
     /**
      * 고유 ID
      */
@@ -23,19 +22,19 @@ class Order(
     /**
      * 데이터 (번호, 성함, 기타 문자들)
      */
-    @Column(columnDefinition = "VARCHAR(16)")
+    @Column
     private val value: String,
 
     /**
      * 생성일
      */
-    @Column(columnDefinition = "DATETIME")
+    @Column
     private val createdDateTime: LocalDateTime,
 
     /**
      * 수정일
      */
-    @Column(columnDefinition = "DATETIME")
+    @Column
     private val updatedDateTime: LocalDateTime,
 
     /**

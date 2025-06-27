@@ -1,6 +1,6 @@
 package com.altkey.code.context.store.order.enums
 
-import com.altkey.code.context.enums.KeyEnum
+import com.altkey.code.context.enums.CodeEnum
 
 /**
  *
@@ -8,8 +8,8 @@ import com.altkey.code.context.enums.KeyEnum
  * @since 2025-04-08
  */
 enum class OrderStatus(
-    private var key: Int
-) : KeyEnum<Int> {
+    private var code: Long
+) : CodeEnum {
     /**
      * 대기
      */
@@ -26,7 +26,7 @@ enum class OrderStatus(
     DELETED(2),
     ;
 
-    override fun getKey(): Int {
-        return key
+    override fun getCode(): Long {
+        return code
     }
 }

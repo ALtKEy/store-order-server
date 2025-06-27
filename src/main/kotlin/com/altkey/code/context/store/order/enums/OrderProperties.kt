@@ -1,6 +1,6 @@
 package com.altkey.code.context.store.order.enums
 
-import com.altkey.code.context.enums.KeyEnum
+import com.altkey.code.context.enums.CodeEnum
 
 /**
  *
@@ -8,7 +8,6 @@ import com.altkey.code.context.enums.KeyEnum
  * @since 2025-04-28
  */
 enum class OrderProperties (
-    private var key: Int
-) : KeyEnum<Int> {
-    //
+    private var code: Int
+) : CodeEnum {
 }
