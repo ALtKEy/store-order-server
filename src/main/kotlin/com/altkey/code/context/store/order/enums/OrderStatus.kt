@@ -11,7 +11,7 @@ enum class OrderStatus(
     private var code: Long
 ) : CodeEnum {
     /**
-     * 대기
+     * 대기(준비중)
      */
     PENDING(0),
 

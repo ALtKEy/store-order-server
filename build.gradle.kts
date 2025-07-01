@@ -2,11 +2,12 @@ import org.gradle.kotlin.dsl.annotationProcessor
 import org.gradle.kotlin.dsl.implementation
 
 plugins {
-	kotlin("jvm") version "2.1.21"
-	kotlin("plugin.spring") version "2.1.21"
+	kotlin("jvm") version "2.2.0"
+	kotlin("plugin.spring") version "2.2.0"
+	kotlin("plugin.allopen") version "2.2.0"
+	kotlin("plugin.jpa") version "2.2.0"
 	id("org.springframework.boot") version "3.5.3"
 	id("io.spring.dependency-management") version "1.1.7"
-	kotlin("plugin.jpa") version "2.1.21"
 }
 
 group = "com.altkey.code"
@@ -24,9 +25,6 @@ repositories {
 
 dependencies {
 	//
-	implementation("com.linecorp.kotlin-jdsl:jpql-dsl:3.5.5")
-	implementation("com.linecorp.kotlin-jdsl:jpql-render:3.5.5")
-
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-web")
@@ -40,8 +38,13 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
 
-	implementation("org.duckdb:duckdb_jdbc:1.3.1.0")
-	implementation("com.zaxxer:HikariCP:6.3.0")
+	implementation("com.linecorp.kotlin-jdsl:jpql-dsl:3.5.5")
+	implementation("com.linecorp.kotlin-jdsl:jpql-render:3.5.5")
+	implementation("com.linecorp.kotlin-jdsl:spring-data-jpa-support:3.5.5")
+
+	implementation("org.xerial:sqlite-jdbc:3.50.1.0")
+	implementation("org.hibernate.orm:hibernate-community-dialects:7.0.4.Final")
+//	implementation("com.zaxxer:HikariCP:6.3.0")
 
 	implementation("io.github.oshai:kotlin-logging-jvm:7.0.7")
 

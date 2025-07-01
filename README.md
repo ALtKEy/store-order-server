@@ -10,7 +10,7 @@
 ## 설치
 * 지원환경
   * OS - Windows(지원예정), Linux, MacOS
-  * DBMS - DuckDB
+  * DBMS - SQLite
 * Release 패키지 다운후 압축 해제
   * `tar -xvf store-order-server-[version].tar.gz -C ./`
   * 실행환경에 맞게 실행 

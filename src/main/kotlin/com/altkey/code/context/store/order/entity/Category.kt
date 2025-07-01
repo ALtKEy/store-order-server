@@ -1,36 +1,25 @@
 package com.altkey.code.context.store.order.entity
 
-import com.altkey.code.context.store.order.enums.OrderStatus
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
 import org.hibernate.annotations.UpdateTimestamp
 import java.time.LocalDateTime
 
 /**
- * 주문
+ * 카테고리 (전화, 배달의민족, 네이버 등)
  *
  * @author Kim Jung-tae(altkey)
- * @since 2025-04-08
+ * @since 2025-07-01
  */
 @Entity
-@Table(name = "orders")
-class Order (
-    /**
-     * 고유 ID
-     */
+class Category (
+    //
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private val id: Long,
 
     /**
-     * 카테고리 (전화, 배달의민족, 네이버 등)
-     */
-    @OneToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
-    private val category: Category,
-
-    /**
-     * 데이터 (번호, 성함, 기타 문자들)
+     * 카테고리 명
      */
     @Column(nullable = false)
     private val value: String,
@@ -39,19 +28,18 @@ class Order (
      * 생성일
      */
     @CreationTimestamp
-    private val createdDateTime: LocalDateTime,
+    private val createDateTime: LocalDateTime,
 
     /**
      * 수정일
      */
     @UpdateTimestamp
-    private val updatedDateTime: LocalDateTime,
+    private val updateDateTime: LocalDateTime,
 
     /**
-     * 상태
+     * 삭제여부
      */
     @Column(nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private val status: OrderStatus
+    private val deleted: Boolean = false
 ) {
 }
