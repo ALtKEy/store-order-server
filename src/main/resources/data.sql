@@ -8,3 +8,6 @@ INSERT INTO category(id, value, deleted)
 VALUES(3, '배달의민족', 0);
 INSERT INTO category(id, value, deleted)
 VALUES(4, '네이버', 0);
+
+INSERT INTO settings(id, value, deleted)
+VALUES (0, "10", 0);

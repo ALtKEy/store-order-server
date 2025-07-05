@@ -3,14 +3,12 @@ package com.altkey.code.store.order.boot
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.autoconfigure.domain.EntityScan
 import org.springframework.boot.runApplication
-import org.springframework.context.annotation.ComponentScan
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import java.io.File
 
 @SpringBootApplication
-//@ComponentScan(basePackages = ["com.altkey.code"])
-//@EntityScan(basePackages = ["com.altkey.code.context.store.order.entity"])
-//@EnableJpaRepositories(basePackages = ["com.altkey.code.store.order.repository"])
+@EnableJpaRepositories(basePackages = ["com.altkey.code.store.order.repository"])
+@EntityScan(basePackages = ["com.altkey.code.store.order.entity"])
 class StoreOrderApplication
 
 fun main(args: Array<String>) {

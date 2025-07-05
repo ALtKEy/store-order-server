@@ -1,4 +1,4 @@
-package com.altkey.code.context.store.order.entity
+package com.altkey.code.store.order.entity
 
 import com.altkey.code.context.store.order.enums.OrderStatus
 import jakarta.persistence.*

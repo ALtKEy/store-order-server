@@ -1,4 +1,4 @@
-package com.altkey.code.context.store.order.entity
+package com.altkey.code.store.order.entity
 
 import jakarta.persistence.*
 import org.hibernate.annotations.CreationTimestamp
