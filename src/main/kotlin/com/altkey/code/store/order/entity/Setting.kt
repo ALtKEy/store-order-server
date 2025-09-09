@@ -2,9 +2,6 @@ package com.altkey.code.store.order.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
 import jakarta.persistence.Table
 
 /**
@@ -16,14 +13,11 @@ import jakarta.persistence.Table
 @Entity
 @Table(name = "settings")
 class Setting(
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long,
 
-    @Column(nullable = false)
-    private val value: String,
+    override val id: Long? = null,
 
-    @Column(nullable = false)
-    private val deleted: Boolean = false,
-) {
+    @Column(length = 100, nullable = false)
+    val value: String,
+
+) : AbstractEntity(id) {
 }

@@ -1,9 +1,9 @@
 package com.altkey.code.store.order.entity
 
-import jakarta.persistence.*
-import org.hibernate.annotations.CreationTimestamp
-import org.hibernate.annotations.UpdateTimestamp
-import java.time.LocalDateTime
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.Index
+import jakarta.persistence.Table
 
 /**
  * 카테고리 (전화, 배달의민족, 네이버 등)
@@ -12,34 +12,12 @@ import java.time.LocalDateTime
  * @since 2025-07-01
  */
 @Entity
-class Category (
+@Table(indexes = [Index(name = "idx_id_n_deleted", columnList = "id, deleted")])
+data class Category(
     //
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private val id: Long,
+    override var id: Long? = null,
 
-    /**
-     * 카테고리 명
-     */
-    @Column(nullable = false)
-    private val value: String,
+    @Column(length = 30, nullable = false)
+    val value: String,
 
-    /**
-     * 생성일
-     */
-    @CreationTimestamp
-    private val createDateTime: LocalDateTime,
-
-    /**
-     * 수정일
-     */
-    @UpdateTimestamp
-    private val updateDateTime: LocalDateTime,
-
-    /**
-     * 삭제여부
-     */
-    @Column(nullable = false)
-    private val deleted: Boolean = false
-) {
-}
+) : AbstractEntity(id)

@@ -12,14 +12,12 @@ import org.springframework.web.bind.annotation.RestController
 import java.time.LocalDateTime
 
 @RestController
-@RequestMapping("/api")
-//@RequestMapping("/order")
+@RequestMapping("/order")
 class OrderController(private val messagingTemplate: SimpMessagingTemplate){
 
     private val logger = KotlinLogging.logger {}
 
-
-    @PostMapping("/order")
+    @PostMapping("/")
     fun createOrder(@RequestBody newOrder: OrderResponse) : OrderResponse {
         val category = CategoryResponse(
             id = 1L,

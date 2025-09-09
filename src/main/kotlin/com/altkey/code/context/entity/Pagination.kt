@@ -1,5 +1,8 @@
 package com.altkey.code.context.entity
 
+import com.altkey.code.context.collection.PaginationArrayList
+import com.altkey.code.context.collection.PaginationList
+import org.springframework.data.domain.Page
 import kotlin.math.ceil
 
 /**
@@ -8,26 +11,27 @@ import kotlin.math.ceil
  * @author Kim Jung-tae(altkey)
  * @since 2025-04-07
  */
-class Pagination (
+class Pagination(
     /**
      * 현재 페이지 번호
      */
-    private var currentPage: Int = 0,
+    var currentPage: Int = 0,
 
     /**
      * 페이지 표시 아이템 개수
      */
-    private var pageItemSize: Int = 0
-) {
+    var pageItemSize: Int = 0,
+
     /**
      * 총 페이지 번호
      */
-    private var totalPage: Int = 0
+    var totalPage: Int = 0,
 
     /**
      * 아이템 전체 개수
      */
-    private var totalItem: Long = 0
+    var totalItem: Long = 0
+) {
 
     /**
      * 서비스단 초기화
@@ -58,5 +62,9 @@ class Pagination (
         } else {
             0
         }
+    }
+
+    fun <T> of(page: Page<T>): PaginationList<T> {
+        return PaginationArrayList(page.content, this)
     }
 }
