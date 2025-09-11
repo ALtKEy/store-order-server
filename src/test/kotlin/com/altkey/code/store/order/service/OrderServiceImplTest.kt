@@ -22,6 +22,7 @@ import org.springframework.boot.test.context.SpringBootTest
 ])
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 class OrderServiceImplTest {
+    //
     @Autowired
     private lateinit var orderService: OrderService
 

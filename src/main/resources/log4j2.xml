@@ -28,6 +28,9 @@
         <Logger name="com.altkey.code.common" level="info" additivity="false">
             <AppenderRef ref="console"/>
         </Logger>
+        <Logger name="com.altkey.code.store.order" level="info" additivity="false">
+            <AppenderRef ref="console"/>
+        </Logger>
         <Root level="warn">
             <AppenderRef ref="console"/>
         </Root>

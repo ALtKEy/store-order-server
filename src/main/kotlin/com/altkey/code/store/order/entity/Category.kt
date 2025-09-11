@@ -17,7 +17,7 @@ data class Category(
     //
     override var id: Long? = null,
 
-    @Column(length = 30, nullable = false)
-    val value: String,
+    @Column(length = 30)
+    val value: String? = null,
 
 ) : AbstractEntity(id)

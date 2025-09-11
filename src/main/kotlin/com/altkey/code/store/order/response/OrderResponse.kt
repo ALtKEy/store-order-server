@@ -1,9 +1,9 @@
-package com.altkey.code.context.response
+package com.altkey.code.store.order.response
 
 import com.altkey.code.context.store.order.enums.OrderStatus
-import com.fasterxml.jackson.annotation.JsonIgnore
-import com.fasterxml.jackson.databind.annotation.JsonSerialize
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer
+import com.altkey.code.store.order.entity.Category
+import com.altkey.code.store.order.entity.Order
+import com.altkey.code.store.order.request.CommonIdRequest
 import jakarta.persistence.EnumType
 import jakarta.persistence.Enumerated
 import java.time.LocalDateTime
@@ -12,13 +12,12 @@ class OrderResponse (
     /**
      * 고유 ID
      */
-    @JsonIgnore
-    var id: Long,
+    var id: Long?,
 
     /**
      * 카테고리 (전화, 배달의민족, 네이버 등)
      */
-    var category: CategoryResponse,
+    var category: Category,
 
     /**
      * 데이터 (번호, 성함, 기타 문자들)
@@ -33,7 +32,7 @@ class OrderResponse (
     /**
      * 수정일
      */
-    var updatedDateTime: LocalDateTime,
+    var updatedDateTime: LocalDateTime?,
 
     /**
      * 상태
@@ -41,4 +40,6 @@ class OrderResponse (
     @Enumerated(EnumType.ORDINAL)
     var status: OrderStatus
 )
-{}
+{
+
+}

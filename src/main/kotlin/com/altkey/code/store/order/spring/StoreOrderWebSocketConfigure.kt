@@ -17,10 +17,10 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 class StoreOrderWebSocketConfigure : WebSocketMessageBrokerConfigurer {
     //
     override fun configureMessageBroker(registry: MessageBrokerRegistry) {
-       registry.enableSimpleBroker("/refresh")
+       registry.enableSimpleBroker("/topic")
     }
 
     override fun registerStompEndpoints(registry: StompEndpointRegistry) {
-        registry.addEndpoint("/ws/order").setAllowedOrigins("*")
+        registry.addEndpoint("/ws/order").addInterceptors().setAllowedOrigins("*")
     }
 }

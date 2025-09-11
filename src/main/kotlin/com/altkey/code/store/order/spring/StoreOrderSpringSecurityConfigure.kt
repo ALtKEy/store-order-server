@@ -30,8 +30,9 @@ class StoreOrderSpringSecurityConfigure {
     @Bean
     fun corsConfigurationSource(): UrlBasedCorsConfigurationSource {
         val configuration = CorsConfiguration()
-        configuration.allowedOrigins = listOf("http://localhost:5173")
+        configuration.allowedOriginPatterns = listOf("*") // 모든 출처 허용
         configuration.allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
+        configuration.allowedHeaders = listOf("*") // 모든 헤더 허용
         val source = UrlBasedCorsConfigurationSource()
         source.registerCorsConfiguration("/**", configuration)
         return source
