@@ -14,7 +14,7 @@ import jakarta.persistence.Table
 @Table(name = "settings")
 class Setting(
 
-    override val id: Long? = null,
+    override val id: Long,
 
     @Column(length = 100, nullable = false)
     val value: String,

@@ -1,4 +1,7 @@
 package com.altkey.code.store.order.spring
 
-class StoreOrderProperties {
+import org.springframework.core.env.Environment
+
+class StoreOrderProperties(private val environment: Environment) {
+
 }
