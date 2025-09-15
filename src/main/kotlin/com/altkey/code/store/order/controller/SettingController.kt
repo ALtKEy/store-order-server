@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/settings")
 class SettingController(val service: SettingService) {
 
-    @GetMapping("/settings/{id}")
+    @GetMapping("/{id}")
     fun getSetting(@PathVariable("id") id : Long): ResponseEntity<Setting> {
         return ResponseEntity(service.getSetting(id), HttpStatus.OK)
     }
 
-    @PostMapping("/settings/{id}")
+    @PostMapping("/{id}")
     fun setTime(@PathVariable("id") id : Long,
                 @RequestBody setting: Setting): ResponseEntity<Setting> {
         println(setting)
