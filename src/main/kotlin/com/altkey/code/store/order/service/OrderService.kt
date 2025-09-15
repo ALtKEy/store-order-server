@@ -22,4 +22,6 @@ interface OrderService {
     fun getList(pageNo: Int): PaginationList<Order>
 
     fun getAll(): List<Order>
+
+    fun getStatusAndLimit(status: OrderStatus, limit: Int): List<Order>
 }

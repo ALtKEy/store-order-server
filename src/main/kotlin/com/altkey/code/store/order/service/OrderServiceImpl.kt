@@ -53,4 +53,12 @@ class OrderServiceImpl(
     override fun getAll(): List<Order> {
         return repository.findAll();
     }
+
+    override fun getStatusAndLimit(
+        status: OrderStatus,
+        limit: Int
+    ): List<Order> {
+        val list : List<Order?> = repository.findByStatusAndLimt(status, limit)
+        return list.filterNotNull()
+    }
 }

@@ -1,4 +1,3 @@
-import org.gradle.kotlin.dsl.annotationProcessor
 import org.gradle.kotlin.dsl.implementation
 
 plugins {
@@ -6,6 +5,7 @@ plugins {
 	kotlin("plugin.spring") version "2.2.10"
 	kotlin("plugin.allopen") version "2.2.10"
 	kotlin("plugin.jpa") version "2.2.10"
+	kotlin("plugin.serialization") version "2.2.0"
 	id("org.springframework.boot") version "3.5.5"
 	id("io.spring.dependency-management") version "1.1.7"
 }
@@ -46,6 +46,7 @@ dependencies {
 	implementation("org.hibernate.orm:hibernate-community-dialects:7.0.10.Final")
 
 	implementation("io.github.oshai:kotlin-logging-jvm:7.0.13")
+	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
 
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.13")
 

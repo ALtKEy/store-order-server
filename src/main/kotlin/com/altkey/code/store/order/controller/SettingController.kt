@@ -23,7 +23,7 @@ class SettingController(val service: SettingService) {
     @PostMapping("/{id}")
     fun setTime(@PathVariable("id") id : Long,
                 @RequestBody setting: Setting): ResponseEntity<Setting> {
-        println(setting)
+        println(setting.createDateTime)
         return ResponseEntity(service.saveSetting(setting), HttpStatus.OK)
     }
 }

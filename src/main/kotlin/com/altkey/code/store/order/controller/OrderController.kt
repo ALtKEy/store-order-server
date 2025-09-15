@@ -1,5 +1,6 @@
 package com.altkey.code.store.order.controller
 
+import com.altkey.code.context.store.order.enums.OrderStatus
 import com.altkey.code.store.order.entity.Order
 import com.altkey.code.store.order.request.OrderRequest
 import com.altkey.code.store.order.response.OrderResponse
@@ -49,6 +50,12 @@ class OrderController(
     @GetMapping("/page/{number}")
     fun getOrderPage(@PathVariable number: Int): List<OrderResponse> {
         val orders: List<Order> = orderService.getList(number)
+        return orders.map { it.toResponse() }
+    }
+
+    @GetMapping("/status/{status}/page/{limit}")
+    fun getOrderPage(@PathVariable status: OrderStatus, @PathVariable limit : Int): List<OrderResponse> {
+        val orders: List<Order> = orderService.getStatusAndLimit(status, limit)
         return orders.map { it.toResponse() }
     }
 }

@@ -26,4 +26,12 @@ interface OrderRepository : JpaRepository<Order, Long>, KotlinJdslJpqlExecutor {
             }
         }
     }
+    fun findByStatusAndLimt(status: OrderStatus, limit: Int): List<Order?> {
+        return this.findAll {
+            select<Order>(path(Order::id), path(Order::category), path(Order::value)).from(
+                entity(Order::class)
+            ).where(path(Order::status).equal(status))
+                .orderBy(path(Order::updateDateTime).desc())
+        }
+    }
 }
