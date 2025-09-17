@@ -16,12 +16,10 @@ import java.time.LocalDateTime
 @MappedSuperclass
 abstract class AbstractEntity(
     //
-    @Serializable(with = StoreDataSerializationConfigure::class)
     @CreationTimestamp
     @Column(updatable = false)
     val createDateTime: LocalDateTime = LocalDateTime.now(),
 
-    @Serializable(with = StoreDataSerializationConfigure::class)
     @UpdateTimestamp
     @Column
     val updateDateTime: LocalDateTime? = null,
