@@ -16,9 +16,6 @@ import java.time.LocalDateTime
 @MappedSuperclass
 abstract class AbstractEntity(
     //
-    @Id
-    val id: Long? = null,
-
     @Serializable(with = StoreDataSerializationConfigure::class)
     @CreationTimestamp
     @Column(updatable = false)

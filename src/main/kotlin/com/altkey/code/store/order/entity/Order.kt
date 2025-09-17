@@ -19,8 +19,9 @@ import jakarta.persistence.*
 )
 class Order (
     //
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    override val id: Long? = null,
+    val id: Long? = null,
 
     /**
      * 카테고리 (전화, 배달의민족, 네이버 등)
@@ -41,7 +42,7 @@ class Order (
     @Column(nullable = false)
     @Enumerated(EnumType.ORDINAL)
     var status: OrderStatus
-) : AbstractEntity(id) {
+) : AbstractEntity() {
     constructor(request: OrderRequest): this(
         category = Category(id = request.category.id),
         value = request.value,

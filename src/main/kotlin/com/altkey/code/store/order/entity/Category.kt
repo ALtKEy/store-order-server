@@ -4,6 +4,7 @@ import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
 import jakarta.persistence.Index
 import jakarta.persistence.Table
 
@@ -17,10 +18,11 @@ import jakarta.persistence.Table
 @Table(indexes = [Index(name = "idx_id_n_deleted", columnList = "id, deleted")])
 data class Category(
     //
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    override var id: Long? = null,
+    val id: Long? = null,
 
     @Column(length = 30)
     val value: String? = null,
 
-) : AbstractEntity(id)
+) : AbstractEntity()
