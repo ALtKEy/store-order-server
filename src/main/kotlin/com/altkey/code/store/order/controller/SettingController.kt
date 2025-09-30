@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -20,7 +20,7 @@ class SettingController(val service: SettingService) {
         return ResponseEntity(service.getSetting(id), HttpStatus.OK)
     }
 
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     fun setTime(@PathVariable("id") id : Long,
                 @RequestBody setting: Setting): ResponseEntity<Setting> {
         println(setting)

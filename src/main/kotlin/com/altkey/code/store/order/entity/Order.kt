@@ -19,7 +19,6 @@ import jakarta.persistence.*
 )
 class Order (
     //
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     override val id: Long? = null,
 
     /**

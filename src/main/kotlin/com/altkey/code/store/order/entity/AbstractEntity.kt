@@ -14,6 +14,7 @@ import java.time.LocalDateTime
 abstract class AbstractEntity(
     //
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 
     @CreationTimestamp
@@ -21,7 +22,6 @@ abstract class AbstractEntity(
     val createDateTime: LocalDateTime = LocalDateTime.now(),
 
     @UpdateTimestamp
-    @Column
     val updateDateTime: LocalDateTime? = null,
 
     @Column(nullable = false)

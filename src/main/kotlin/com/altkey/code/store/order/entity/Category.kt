@@ -17,7 +17,6 @@ import jakarta.persistence.Table
 @Table(indexes = [Index(name = "idx_id_n_deleted", columnList = "id, deleted")])
 data class Category(
     //
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     override var id: Long? = null,
 
     @Column(length = 30)
