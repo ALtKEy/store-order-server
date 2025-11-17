@@ -1,5 +1,6 @@
 package com.altkey.code.store.order.entity
 
+import com.altkey.code.store.order.response.CategoryResponse
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -22,4 +23,8 @@ data class Category(
     @Column(length = 30)
     val value: String? = null,
 
-) : AbstractEntity(id)
+) : AbstractEntity(id) {
+    fun toResponse(): CategoryResponse {
+        return CategoryResponse(id=this.id, value=this.value)
+    }
+}
