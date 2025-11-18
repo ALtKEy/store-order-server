@@ -14,6 +14,5 @@ import org.springframework.core.env.Environment
 @PropertySource($$"file:${config.home}${module.name}.properties")
 @PropertySource($$"file:${config.home}${module.name}-${spring.profiles.active}.properties")
 class StoreOrderPropertiesConfigure(
-    val environment: Environment
 ) {
 }

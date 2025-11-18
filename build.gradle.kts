@@ -37,6 +37,7 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-blackbird:2.20.0")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
+	implementation("com.graphql-java:graphql-java-extended-scalars:21.0")
 
 	implementation("com.linecorp.kotlin-jdsl:jpql-dsl:3.5.5")
 	implementation("com.linecorp.kotlin-jdsl:jpql-render:3.5.5")

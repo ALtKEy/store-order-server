@@ -2,27 +2,22 @@ package com.altkey.code.store.order.controller
 
 import com.altkey.code.store.order.entity.Setting
 import com.altkey.code.store.order.service.SettingService
-import org.springframework.http.HttpStatus
-import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PutMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.graphql.data.method.annotation.Argument
+import org.springframework.graphql.data.method.annotation.Arguments
+import org.springframework.graphql.data.method.annotation.MutationMapping
+import org.springframework.graphql.data.method.annotation.QueryMapping
+import org.springframework.stereotype.Controller
 
-@RestController
-@RequestMapping("/settings")
+@Controller
 class SettingController(val service: SettingService) {
 
-    @GetMapping("/{id}")
-    fun getSetting(@PathVariable("id") id : Long): ResponseEntity<Setting> {
-        return ResponseEntity(service.getSetting(id), HttpStatus.OK)
+    @QueryMapping
+    fun getSetting(@Argument id : Long): Setting {
+        return service.getSetting(id)
     }
 
-    @PutMapping("/{id}")
-    fun setTime(@PathVariable("id") id : Long,
-                @RequestBody setting: Setting): ResponseEntity<Setting> {
-        return ResponseEntity(service.saveSetting(setting), HttpStatus.OK)
+    @MutationMapping
+    fun updateSetting(@Argument id : Long, @Argument value: String): Setting {
+        return service.saveSetting(Setting(id, value))
     }
 }

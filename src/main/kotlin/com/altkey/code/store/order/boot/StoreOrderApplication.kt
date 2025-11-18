@@ -12,5 +12,6 @@ fun main(args: Array<String>) {
 	System.setProperty("module.name", "store-order")
 	System.setProperty("module.home", System.getProperty("user.dir"))
 	System.setProperty("config.home", System.getProperty("user.dir") + File.separator + "config" + File.separator)
+	System.setProperty("spring.profiles.active", System.getProperty("spring.profiles.active") ?: "local")
 	runApplication<StoreOrderApplication>(*args)
 }
