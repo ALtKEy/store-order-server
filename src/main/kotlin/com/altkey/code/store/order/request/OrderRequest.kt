@@ -1,11 +1,12 @@
 package com.altkey.code.store.order.request
 
 import com.altkey.code.context.store.order.enums.OrderStatus
-import com.altkey.code.store.order.entity.Category
 import jakarta.persistence.EnumType
 import jakarta.persistence.Enumerated
 
 data class OrderRequest (
+
+    var id : Long? = null,
     /**
      * 카테고리 (전화, 배달의민족, 네이버 등)
      */

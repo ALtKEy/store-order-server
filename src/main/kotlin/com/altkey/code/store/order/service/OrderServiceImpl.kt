@@ -58,7 +58,7 @@ class OrderServiceImpl(
         status: OrderStatus,
         limit: Int
     ): List<Order> {
-        val list : List<Order?> = repository.findByStatusAndLimt(status, limit)
+        val list : List<Order?> = repository.findByStatusAndLimit(status, limit)
         return list.filterNotNull()
     }
 }

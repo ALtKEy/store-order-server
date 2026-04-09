@@ -1,0 +1,19 @@
+type Category implements AbstractEntity {
+    id: ID!
+    value: String
+}
+
+extend type Query {
+    category(id: ID!): Category
+    categories: [Category]
+}
+
+input CategoryInput {
+    id: ID!
+    value: String
+}
+
+extend type Mutation {
+    newCategory(value: String!): Category
+    updateCategory(category: CategoryInput): Category
+}

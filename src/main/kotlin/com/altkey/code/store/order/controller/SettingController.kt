@@ -2,22 +2,19 @@ package com.altkey.code.store.order.controller
 
 import com.altkey.code.store.order.entity.Setting
 import com.altkey.code.store.order.service.SettingService
-import org.springframework.graphql.data.method.annotation.Argument
-import org.springframework.graphql.data.method.annotation.Arguments
-import org.springframework.graphql.data.method.annotation.MutationMapping
-import org.springframework.graphql.data.method.annotation.QueryMapping
-import org.springframework.stereotype.Controller
+import org.springframework.web.bind.annotation.*
 
-@Controller
-class SettingController(val service: SettingService) {
+@RestController
+@RequestMapping("/setting")
+class SettingController(private val service: SettingService) {
 
-    @QueryMapping
-    fun getSetting(@Argument id : Long): Setting {
+    @GetMapping("/{id}")
+    fun getSetting(@PathVariable id : Long): Setting {
         return service.getSetting(id)
     }
 
-    @MutationMapping
-    fun updateSetting(@Argument id : Long, @Argument value: String): Setting {
-        return service.saveSetting(Setting(id, value))
+    @PutMapping("/{id}")
+    fun updateSetting(@PathVariable id : Long, @RequestBody setting: Setting): Setting {
+        return service.saveSetting(Setting(id, setting.value))
     }
 }

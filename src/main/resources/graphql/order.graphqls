@@ -1,0 +1,34 @@
+type Order implements AbstractEntity {
+    id: ID!
+    value: String!
+    category: Category!
+    status: OrderStatus!
+    createdDateTime: String
+    updatedDateTime: String
+}
+
+enum OrderStatus {
+    PENDING
+    SERVED
+    DELETED
+}
+
+extend type Query {
+    getOrder(id: ID!): Order
+    orders: [Order]
+    orderPage(number: Int!): [Order]
+    ordersByStatusAndLimit(status: OrderStatus!, limit: Int!): [Order]
+}
+
+input OrderInput {
+    id: ID
+    category: CategoryInput!
+    value: String!
+    status: OrderStatus!
+}
+
+extend type Mutation {
+    newOrder(order: OrderInput!): Order
+    updateOrder(order: OrderInput!): Order
+    updateOrderStatus(id: ID!, status: OrderStatus!): Order
+}
